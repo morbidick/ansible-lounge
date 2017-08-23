@@ -19,7 +19,7 @@ module.exports = {
 	// @type     string
 	// @default  undefined
 	//
-	host: undefined,
+	host: {% if lounge_host is defined %}{{ lounge_host | to_json }}{% else %}undefined{% endif %},
 
 	//
 	// Set the port to listen on.

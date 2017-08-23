@@ -43,6 +43,12 @@ lounge_debug:
   raw: true
 ```
 
+### `lounge_host`
+
+Sets the ip that `lounge` is listening on.
+
+This variable is **optional** and defaults to `undefined` so the system default is chosen. When used with a proxy set it to `localhost`.
+
 ### `lounge_port`
 
 Sets the port that `lounge` is listening on.
