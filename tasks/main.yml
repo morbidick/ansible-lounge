@@ -72,15 +72,18 @@
   become: yes
   notify: Restart lounge
 
-- name: Ensure preview storage directory is present
+- name: Ensure preview storage and log directory are present
   file:
-    path: /etc/lounge/storage
+    path: "{{ item }}"
     owner: lounge
     group: lounge
     mode: "0770"
     state: directory
   become: yes
   notify: Restart lounge
+  with_items:
+    - /etc/lounge/storage
+    - /etc/lounge/logs
 
 - name: Ensure user configuration files are present
   template:
